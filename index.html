@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Назва у вкладці -->
+  <title>n1meli_rw | Home</title>
+  <!-- Опис для пошуковиків -->
+  <meta name="description" content="Веб-додаток n1meli_rw">
+
+  <!-- Фавікон -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Шрифти та стилі -->
+  <link rel="stylesheet" href="css/cyrillic-400.min.css">
+  <link rel="stylesheet" href="css/cyrillic-500.min.css">
+  <link rel="stylesheet" href="css/cyrillic-700.min.css">
+  <link rel="stylesheet" href="css/inter.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/tailwind.min.css">
+
+  <!-- Preload стилів додатку -->
+  <link rel="preload" as="style" href="css/app-C6G_3qQV.css">
+  <link rel="stylesheet" href="css/app-C6G_3qQV.css">
+
+  <!-- Модульний JS -->
+  <link rel="modulepreload" href="js/app-D6_fL4dy.js">
+  <script type="module" src="js/app-D6_fL4dy.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="min-h-screen h-full bg-gray-900 text-white font-inter" x-data x-init="console.log('Initializing n1meli_rw')">
+
+  <!-- Статус повідомлення -->
+  <div x-show="$store.status.value"
+       x-bind:class="{
+         'py-1 text-lg font-medium w-full text-center': true,
+         'bg-purple-500': $store.status.value.toLowerCase().includes('queue') && !($store.status.value.toLowerCase().includes('err')),
+         'bg-green-500': $store.status.value.toLowerCase().includes('success'),
+         'bg-red-500': $store.status.value.toLowerCase().includes('err')
+       }"
+       class="sticky top-0 z-50">
+    <div class="w-screen max-w-screen"> <span x-text="$store.status.value"></span> </div>
+  </div>
+
+  <!-- Верхня панель дій -->
+  <div class="bg-gray-700 w-full p-1 flex flex-wrap gap-1.5 items-center">
+    <a href="/" class="flex items-center space-x-2">
+      <img src="assets/logo.png" alt="n1meli_rw logo" class="h-6 w-6">
+      <span class="text-lg font-semibold">n1meli_rw</span>
+    </a>
+    <!-- Кнопки секцій та налаштувань тут... (залишити незмінними або адаптувати під ваш функціонал) -->
+  </div>
+
+  <!-- Основний контент -->
+  <div class="p-4">
+    <!-- Тут починаються секції для Prompt, Scenes, History тощо -->
+    <!-- Залиште блоки Alpine.js без змін, якщо потрібна та ж логіка -->
+  </div>
+
+  <!-- Підвантаження бібліотек -->
+  <script src="js/axios.min.js"></script>
+  <script src="js/Sortable.min.js"></script>
+
+  <!-- Ініціалізація Sortable -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-section-id]').forEach(el => {
+        new Sortable(el, { handle: '.drag-handle', animation: 150 });
+      });
+    });
+  </script>
+
+</body>
+</html>
