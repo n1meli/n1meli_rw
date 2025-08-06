@@ -1,3 +1,4 @@
+axios.defaults.baseURL = '/api';
 var jn=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Hy(t){return t&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")?t.default:t}var mi={exports:{}};/**
  * @license
  * Lodash <https://lodash.com/>
